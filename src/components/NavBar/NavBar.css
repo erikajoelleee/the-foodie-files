@@ -1,0 +1,110 @@
+.navbar-content {
+    padding-top: 56px; /* Add this line */
+  }
+
+  .navbar {
+    position: fixed;
+    width: 100%;
+    height: 56px;
+    background: rgb(32, 46, 81);
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Align contents to the edges */
+    z-index: 1000;
+    top: 0;
+    margin-left: -280px;
+  
+}
+
+.navbar::before {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 56px;
+    left: 280px;
+    border-radius: 50%;
+    box-shadow: -20px -20px 0 rgb(32, 46, 81);
+    /* background-color: rgb(18, 30, 45); */
+
+}
+  
+.nav-search-div {
+    display: flex;
+    align-items: center;
+    margin-left: 300px; /* Add some margin to create space between search bar and username */
+}
+  
+.nav-search-btn {
+    font-size: 20px;
+    transform: scale(0.8);
+    width: 2px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: rgb(109, 110, 112);
+    font-size: 24px;
+    position: absolute;
+    left: 540px;
+    bottom: 10px;
+    
+}
+
+  
+.nav-search-input {
+    border-radius: 16px;
+    padding: 9px 12px 9px 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-image: initial;
+    transition: all 200ms ease 0s;
+    background-color: rgb(27, 44, 66);
+    border-color: rgb(59, 99, 150);
+    color: rgb(255, 255, 255);
+    outline: none;
+    width: 250px;
+}
+
+/* Clears the X button */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
+
+.user-profile-name {
+    color: white;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.user-icon {
+    margin-top: 3px;
+    margin-right: 5px;
+}
+
+.add-post-button {
+    margin-left: 15px;
+    margin-top: -3px;
+}
+
+.new-post-hyperlink:hover {
+    color: rgb(232, 207, 16);
+}
+
+.new-post-button {
+    color: white;
+    margin-top: 5px;
+}
+
+.new-post-hyperlink {
+    text-decoration: none;
+    color: white;
+}
+
+.new-post-text {
+    position: relative;
+    padding: 2px;
+    top: -2px;
+}

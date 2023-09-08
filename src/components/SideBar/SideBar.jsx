@@ -7,42 +7,41 @@ import './SideBar.css';
 
 export default function SideBar({ user, setUser }) {
     const [activeMenu, setActiveMenu] = useState('home');
-
+  
     function handleLogOut() {
-        userService.logOut();
-        setUser(null);
-
+      userService.logOut();
+      setUser(null);
     }
-
+  
     const getSidebarClassName = (menu) => {
-        return activeMenu === menu ? 'active' : '';
+      return activeMenu === menu ? 'active' : '';
     };
-
+  
     const handleSidebarClick = (menu) => {
-        setActiveMenu(menu);
-    }
-
-  return (
-    <>
+      setActiveMenu(menu);
+    };
+  
+    return (
+      <>
         <section className="sidebar">
-            <Link to="/home" className="brand">
-                <span className="sidebar-the">
-                    <h2>THE</h2>
-                </span>
-                <span className="sidebar-foodie">
-                    <h2>FOODIE</h2>
-                </span>
-                <span className="sidebar-files">
-                    <h2>FILES</h2>
-                </span>
-            </Link>
-            <ul className="side-menu top">
-                <li className={getSidebarClassName('home')}>
-                    <Link to="/home" className="sidebar-home" onClick={() => handleSidebarClick('home')}>
-                        <AiOutlineHome className="home-icon"/>
-                        <span className="sidebar-text">Home</span>
-                    </Link>
-                </li>
+          <Link to="/home" className="brand">
+            <img
+              src="https://i.imgur.com/1h1rFpZ.png" 
+              alt="The Foodie Files"
+              className="sidebar-logo"
+            />
+          </Link>
+          <ul className="side-menu top">
+            <li className={getSidebarClassName('home')}>
+              <Link
+                to="/home"
+                className="sidebar-home"
+                onClick={() => handleSidebarClick('home')}
+              >
+                <AiOutlineHome className="home-icon" />
+                <span className="sidebar-text">Home</span>
+              </Link>
+            </li>
                 <li className="sidebar-separator"></li>
                 <li className={getSidebarClassName('appetizer')}>
                     <Link to="/posts/category/appetizer" className="sidebar-appetizer" onClick={() => handleSidebarClick('appetizer')}>
@@ -69,17 +68,16 @@ export default function SideBar({ user, setUser }) {
                         <span className="sidebar-text">Party Tray</span>
                     </Link>
                 </li>
-            </ul>
-            <ul className="side-menu">
-                <li>
-                    <Link to="" onClick={handleLogOut} className="logout-link">
-                        <BiLogOut className="logout-icon" />
-                        <span className="sidebar-text">Log out</span>
-                    </Link>
-                </li>
-            </ul>
-        </section>
+                </ul>
+        <ul className="side-menu">
+          <li>
+            <Link to="" onClick={handleLogOut} className="logout-link">
+              <BiLogOut className="logout-icon" />
+              <span className="sidebar-text">Log out</span>
+            </Link>
+          </li>
+        </ul>
+      </section>
     </>
-    
   );
 }

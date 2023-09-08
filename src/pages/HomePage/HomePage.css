@@ -1,0 +1,10 @@
+.home-page-header {
+    color: white;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.post-on-postpage {
+    margin-bottom: -30px;
+}

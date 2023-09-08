@@ -1,0 +1,30 @@
+.new-post-page-header {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.new-post-on-postpage {
+    color: white;
+    margin-top: 2vmin;
+    background-color: rgb(32, 46, 81);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+  
+.new-post-page-rest-of-post {
+    flex-direction: column;
+    margin: 15px 15px 15px 15px;
+
+}
+
+.create-post-btn {
+    font-size: 14px;
+    background-color: rgb(228, 208, 71);
+    color: rgb(89, 81, 28);
+    margin-right: 10px;
+    cursor: pointer;
+}

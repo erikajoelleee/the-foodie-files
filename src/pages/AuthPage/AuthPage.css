@@ -1,0 +1,208 @@
+.auth-page-main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    padding: 0px 20px 40px;
+}
+
+.the-foodie-files-h1 {
+    color: rgb(232, 207, 16);
+    font-family: 'Beaufort for LOL';
+    font-weight: bold;
+    font-size: 36px;
+    letter-spacing: 0.15rem;
+    text-shadow: 5px 5px 4px rgba(59, 48, 21, 0.6);
+}
+
+.signup-rectangle {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    max-width: 320px;
+    flex: 1 1 320px;
+}
+
+.auth-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 15px;
+}
+
+.auth-page-form-column {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+}
+
+.auth-form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 320px;
+    height: auto;
+    gap: 10px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.auth-input-field {
+    font: bold 14px sans-serif;
+    border-radius: 6px;
+    padding: 9px 12px 9px 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-image: initial;
+    transition: all 200ms ease 0s;
+    background-color: rgb(27, 44, 66);
+    border-color: rgb(59, 99, 150);
+    color: rgb(255, 255, 255);
+    outline: none;
+    width: 324px;
+}
+
+.auth-input-field:focus, .auth-input-field:hover {
+    border-color: rgb(232, 207, 16);
+    background-color: rgb(37, 54, 77);
+}
+
+.auth-input-field::placeholder {
+    color: rgb(166, 166, 166);
+}
+
+.auth-input-group {
+    position: relative;
+}
+
+.auth-input-field {
+    padding-left: 30px;
+}
+
+.auth-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;  
+    color: rgb(166, 166, 166);
+}
+
+.auth-input-group.active .auth-icon {
+    color: rgb(255, 255, 255);
+}
+
+.error-message {
+    color: rgb(209, 82, 132);
+    text-align: center;
+    font-size: 14px;
+}
+
+
+.auth-button {
+    margin: 1vmin;
+    padding: 1vmin;
+    color: rgb(0, 0, 0);
+    background-color: rgb(232, 207, 16);
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    border-radius: .5vmin;
+    outline: none;
+    cursor: pointer;
+}
+
+.auth-button:disabled, form:invalid button[type="submit"] {
+    cursor: not-allowed;
+    background-color: rgb(137, 106, 36);
+}
+
+.auth-button[type="submit"] {
+    grid-column: span 2;
+    margin: 1vmin 0 0;
+}
+
+.auth-tabs {
+    display: flex;
+    align-items: flex-end;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    position: relative;
+    width: 100%;
+}
+
+.auth-hyper-link {
+    white-space: nowrap;
+    flex: 0 1 auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tab-login,
+.tab-signup {
+    text-decoration: none;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    gap: 2px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    font: 16px Roboto, sans-serif;
+    font-weight: bold;
+    letter-spacing: 0.015rem;
+    padding: 10px 24px 10px;
+    color: rgb(166, 166, 166);
+    flex: 1 1 auto;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.tab-login:hover,
+.tab-signup:hover {
+    color: rgb(232, 207, 16);
+}
+
+.tab-login.active,
+.tab-signup.active {
+    color: rgb(232, 207, 16);
+}
+
+.tab-login.active::before,
+.tab-signup.active::before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    height: 1px;
+    background: rgb(18, 30, 45);
+}
+
+.tab-login.active::after,
+.tab-signup.active::after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 3px;
+    height: 4px;
+    background: rgb(232, 207, 16);
+}

@@ -1,0 +1,319 @@
+.Loading-post-page { 
+    color: white;
+    font-size: 36px;
+}
+
+.post-on-postpage {
+    color: white;
+    margin-top: 6vmin;
+    margin-right: 4vmin;
+    margin-left: 4vmin;
+    background-color: rgb(32, 46, 81);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 550px;
+    position: relative;
+    
+}
+  
+.postedBy-postpage-div {
+    display: flex;
+    align-items: center;
+    margin-top: -22px;
+    padding: 10px;
+}
+
+.postpage-buttons {
+    display: flex;
+    align-self: flex-start;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.vertical-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2px;
+    margin-left: 5px;
+    margin-top: 2px;
+}
+
+.vertical-buttons button {
+    margin-bottom: 5px;
+}
+
+.like-button,
+.dislike-button {
+    color: rgb(116, 116, 117);
+    font-size: 18px;
+    background: transparent;
+    border: transparent;
+    cursor: pointer;
+    position: relative;
+}
+
+.like-button.liked {
+    color: rgb(255, 221, 0);
+}
+
+.dislike-button.disliked {
+    color: rgb(201, 91, 91);
+}
+
+.like-button::before,
+.dislike-button::before,
+.delete-post-button::before,
+.edit-button-postpage::before {
+    content: attr(title); /* Use the title attribute as content for the tooltip */
+    position: absolute;
+    top: -30px; /* Adjust the top position of the tooltip */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s;
+}
+
+.like-button:hover::before,
+.dislike-button:hover::before,
+.delete-post-button:hover::before,
+.edit-button-postpage:hover::before {
+    visibility: visible;
+    opacity: 1;
+}
+
+.dislike-button::before {
+    top: auto;
+    bottom: -30px;
+}
+  
+.post-page-rest-of-post {
+    flex-direction: column;
+    margin-top: -4px;
+
+}
+
+.post-page-category {
+    margin-right: 10px; 
+}
+  
+.post-page-title {
+    margin: 0;
+    padding: 10px;
+    margin-top: -35px;
+    margin-right: 32px;
+}
+
+.post-page-content {
+    margin: 0;
+    padding: 10px;
+    margin-top: -10px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    margin-right: 32px;
+}
+
+
+.edit-options { 
+    margin-bottom: 14px;
+    align-self: flex-end;
+    margin-left: auto;
+    margin-right: 2px;
+}
+
+.edit-button-postpage {
+    color: rgb(116, 116, 117);
+    font-size: 18px;
+    background: transparent;
+    border: transparent;
+    cursor: pointer;
+    margin-top: -5px;
+    margin-right: -10px;
+    margin-left: 4px;
+    margin-bottom: 5px;
+    position: absolute;
+    top: 10px;
+    right: 13px;
+}
+
+.edit-post-form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.delete-post-button {
+    color: rgb(237, 112, 107);
+    font-size: 18px;
+    background: transparent;
+    border: transparent;
+    cursor: pointer;
+    margin-left: 295px;
+    margin-right: -3px;
+    margin-top: -4px;
+    position: absolute;
+    top: 9px;
+    right: 6px;
+}
+
+.delete-post-button::before {
+    content: attr(title);
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s;
+}
+  
+.delete-post-button:hover::before {
+    visibility: visible;
+    opacity: 1;
+}
+
+.delete-confirmation-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.90); /* Dark overlay color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.delete-confirmation-dialog {
+    margin-left: 280px;
+    background-color: rgb(32, 46, 81);
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.delete-confirmation-paragraph {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+  
+.delete-confirmation-buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+  
+.delete-confirm-button,
+.delete-cancel-button {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.delete-confirm-button {
+    font-size: 14px;
+    background-color: rgb(237, 112, 107);
+    color: rgb(117, 31, 31);
+}
+  
+.delete-cancel-button {
+    font-size: 14px;
+    background: transparent;
+    color: white;
+    border: transparent;
+    font-weight: bold;
+}
+
+.edit-post-form {
+    display: flex;
+    flex-direction: column;
+    margin-right: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.edit-category,
+.edit-title,
+.edit-content {
+    font-size: 14px;
+}
+
+.edit-category-option,
+.edit-title-text,
+.edit-content-text {
+    color: white;
+    font-size: 14px;
+    border: 1px solid rgb(64, 93, 139);
+    border-radius: 5px;
+    background: transparent;
+
+}
+
+.edit-title-text,
+.edit-content-text {
+    width: 400px;
+}
+
+.edit-category-div,
+.edit-title-div,
+.edit-content-div {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 6px;
+}
+
+.edit-field-category {
+    margin-right: 10px;
+}
+
+.edit-field-title {
+    margin-right: 41.2px;
+}
+
+.edit-field-content {
+    margin-right: 17.5px;
+}
+
+.save-changes-button {
+    font-size: 14px;
+    background-color: rgb(228, 208, 71);
+    color: rgb(89, 81, 28);
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.cancel-button {
+    cursor: pointer;
+    font-size: 14px;
+    color: white;
+    background: transparent;
+    border: transparent;
+    font-weight: bold;
+}
+
+.save-button-edit {
+    margin-bottom: 8px;
+    margin-top: 10px;
+}
+
+.post-page-created-div {
+    margin-top: -56px;
+    margin-left: 9.7px;
+    padding-bottom: 10px;
+}
+.post-page-created-at {
+    color: rgb(103, 103, 103);
+}

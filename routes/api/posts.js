@@ -1,6 +1,3 @@
-const multer = require("multer");
-const upload = multer({ dest: "public/uploads" });
-
 const express = require('express');
 const router = express.Router();
 const postsCtrl = require('../../controllers/api/posts');
@@ -10,9 +7,6 @@ const ensureLoggedIn = require('../../config/ensureLoggedIn');
 
 // POST /api/posts/new
 router.post('/new', ensureLoggedIn, postsCtrl.create);
-
-// POST /api/posts/upload
-router.post('/upload', ensureLoggedIn, upload.single('file'), postsCtrl.uploadFile);
 
 // GET /api/posts
 router.get('/', ensureLoggedIn, postsCtrl.fetchPosts);

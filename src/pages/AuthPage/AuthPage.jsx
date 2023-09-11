@@ -19,7 +19,7 @@ export default function AuthPage({ setUser }) {
   return (
     <>
       <main className="auth-page-main">
-        <h1 className="the-foodie-files-h1">THE FOODIE FILES</h1>
+        <h1 className="legends-lounge-h1">LEGENDS LOUNGE</h1>
         <div className="signup-rectangle">
           <div className="auth-page-container">
             <div className="auth-tabs" role="tablist">

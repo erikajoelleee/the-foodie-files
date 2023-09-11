@@ -1,7 +1,4 @@
 const Post = require('../../models/post');
-const PostTag = require('../../models/postTag'); // Import the PostTag model
-const multer = require("multer");
-const upload = multer({ dest: "public/uploads" });
 
 module.exports = {
   create,
@@ -9,50 +6,29 @@ module.exports = {
   fetchPosts,
   fetchPostsByCategory,
   updatePost,
-  deletePost,
-  uploadFile, // Add the function for file uploads
+  deletePost
 };
 
 async function create(req, res) {
-    const { category, title, description, ingredients, instructions, tags, thoughts } = req.body;
+    const { category, title, content } = req.body;
     const { name, _id } = req.user;
 
     try {
-      // Create an array to store tag IDs
-      const tagIds = await Promise.all(tags.map(async (tagName) => {
-        // Check if the tag already exists, if not, create it
-        const tag = await PostTag.findOne({ name: tagName });
-        if (!tag) {
-          const newTag = new PostTag({ name: tagName });
-          await newTag.save();
-          return newTag._id;
-        }
-        return tag._id;
-      }));
-
       const newPost = await Post.create({ 
-        category,
-        title,
-        description,
-        ingredients,
-        instructions,
-        tags: tagIds, // Associate tags with the post
-        thoughts,
+        category: category,
+        title: title,
+        content: content,
         user: { name, _id }
       });
-      res.status(201).json(newPost);
+      res.json(newPost);
+
+      console.log(newPost);
+
 
     } catch (error) {
       console.error(error);
       res.status(500).json({ message: 'Error creating post' });
     }
-}
-
-async function uploadFile(req, res) {
-  // Handle file upload logic using Multer
-  // Extract uploaded file information from req.file
-  const { originalname, filename } = req.file;
-  // Handle file storage, database association, and response as needed
 }
 
 async function getPostById(req, res) {
@@ -109,7 +85,7 @@ async function fetchPostsByCategory(req, res) {
         res.json(posts);
 
     } catch (error) {
-        console.error('Failed to fetch posts by category: ', error);
+        console.error('Failed to fecth posts by category: ', error);
         res.status(500).json({ error: 'Failed to fetch posts by category' });
     }
 

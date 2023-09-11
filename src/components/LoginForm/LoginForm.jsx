@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import * as usersService from '../../utilities/users-service';
+import { AiOutlineMail, AiOutlineLock } from 'react-icons/ai';
 
-export default function LoginForm({ setUser }) {
+export default function LogInForm({ setUser }) {
   const [credentials, setCredentials] = useState({
     email: '',
     password: ''
   });
+
   const [error, setError] = useState('');
 
   function handleChange(evt) {
@@ -13,32 +15,44 @@ export default function LoginForm({ setUser }) {
     setError('');
   }
 
-  async function handleSubmit(evt) {
-    // Prevent form from being submitted to the server
-    evt.preventDefault();
+  const generateClassName = (value) => {
+    return `auth-input-group ${value !== '' ? 'active' : ''}`;
+  }
+
+  const handleSignupOrLogin = async () => {
     try {
-      // The promise returned by the signUp service method 
-      // will resolve to the user object included in the
-      // payload of the JSON Web Token (JWT)
       const user = await usersService.login(credentials);
       setUser(user);
+      // redirect to home page
+      window.location.href = '/home';
     } catch {
       setError('Log In Failed - Try Again');
     }
+  };
+
+  function handleSubmit(evt) {
+    evt.preventDefault();
+    handleSignupOrLogin();
   }
 
   return (
-    <div>
-      <div className="form-container">
-        <form autoComplete="off" onSubmit={handleSubmit}>
-          <label>Email</label>
-          <input type="text" name="email" value={credentials.email} onChange={handleChange} required />
-          <label>Password</label>
-          <input type="password" name="password" value={credentials.password} onChange={handleChange} required />
-          <button type="submit">LOG IN</button>
-        </form>
+    <>
+      <div className="auth-page-form-column">
+        <div className="auth-form-container">
+          <form autoComplete="off" onSubmit={handleSubmit} className="auth-form">
+            <div className={generateClassName(credentials.email)}>
+              <AiOutlineMail className="auth-icon" />
+              <input type="text" name="email" placeholder="Email" value={credentials.email} onChange={handleChange} required className="auth-input-field" />
+            </div>
+            <div className={generateClassName(credentials.password)}>
+              <AiOutlineLock className="auth-icon" />
+              <input type="password" name="password" placeholder="Password" value={credentials.password} onChange={handleChange} required className="auth-input-field" />
+            </div>
+            <button type="submit" className="auth-button">LOG IN</button>
+            <p className="error-message">&nbsp;{error}</p>
+          </form>
+        </div>
       </div>
-      <p className="error-message">&nbsp;{error}</p>
-    </div>
+    </>
   );
 }

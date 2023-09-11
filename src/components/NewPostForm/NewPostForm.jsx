@@ -79,7 +79,7 @@ export default class NewPostForm extends Component {
                           <option value="main">Main</option>
                           <option value="dessert">Dessert</option>
                           <option value="party-tray">Party Tray</option>
-                      </select>
+                          </select>
                   </div>
                   <div className="edit-title-div">
                     <div className="edit-field-title">

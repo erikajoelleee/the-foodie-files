@@ -17,26 +17,6 @@ const postSchema = new Schema({
         required: true,
     },
 
-    ingredients: {
-        type: String,
-        required: true,
-    },
-
-    instructions: {
-        type: String,
-        required: true,
-    },
-
-    tags: [{
-        type: Schema.Types.ObjectId,
-        ref: 'PostTag',
-    }],
-
-    thoughts: {
-        type: String,
-        required: true,
-    },
-
     user: {
         type: Schema.Types.ObjectId,
         ref: 'User',

@@ -1,148 +1,146 @@
-ul, li {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-  
-  /* Sidebar styles */
-  .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 280px;
-    height: 100%;
-    background: rgb(28, 47, 84);
-    z-index: 2000;
-    overflow-y: hidden;
-    overflow-x: hidden;
-    color: white;
-    text-decoration: none;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  
-  /* Hide scrollbar */
-  .sidebar::-webkit-scrollbar {
-    display: none;
-  }
-  
-  /* Brand styles */
-  .brand {
-    padding-top: 2px;
-    color: rgb(232, 207, 16);
-    text-decoration: none;
-    font-size: 22px;
-    font-weight: 700;
-    font-family: 'Beaufort for LOL';
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-  
-  /* Styles for the logo and ransomizer */
-  .brand .sidebar-text {
-    font-size: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .brand #ransomizer {
-    font-size: 1.5rem;
-    line-height: normal;
-    word-spacing: 0.5em;
-  }
-  
-  /* Styles for menu items */
-  .side-menu {
-    width: 100%;
-    margin-top: 5px;
-    list-style: none;
-    flex-grow: 1;
-  }
-  
-  .side-menu li {
-    height: 48px;
-    background: transparent;
-    margin-left: -35px;
-    border-radius: 48px 0 0 48px;
-    padding: 4px;
-  }
-  
-  .side-menu li.active {
-    background: rgb(14, 30, 46);
-    position: relative;
-  }
-  
-  .side-menu li.active::before {
-    content: '';
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    top: -40px;
-    right: 0;
-    box-shadow: 20px 20px 0 rgb(14, 30, 46);
-    z-index: -1;
-  }
-  
-  .side-menu li.active::after {
-    content: '';
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    bottom: -40px;
-    right: 0;
-    box-shadow: 20px -20px 0 rgb(14, 30, 46);
-    z-index: -1;
-  }
-  
-  .side-menu li a {
-    text-decoration: none;
-    height: 100%;
-    display: flex;
-    background: rgb(32, 46, 81);
-    align-items: center;
-    border-radius: 48px;
-    color: white;
-    white-space: nowrap;
-  }
-  
-  .side-menu.top li a:hover span {
-    color: rgb(232, 207, 16);
-  }
-  
-  .side-menu.top li.active a span {
-    color: rgb(232, 207, 16);
-  }
-  
-  .side-menu.top.hide li.active a span {
-    color: rgb(232, 207, 16);
-    width: calc(48px - (4px * 2));
-  }
-  
-  .side-menu li a.logout-link:hover {
-    color: rgb(237, 112, 107);
-  }
-  
-  .home-icon,
-  .logout-icon {
-    min-width: calc(60px - ((4px + 6px) * 2));
-    display: flex;
-    justify-content: center;
-    font-size: 16px;
-  }
-  
-  .collapse-icon {
-    margin-left: 11px;
-  }
-  
-  .collapse-text {
-    margin-left: 11px;
-  }
-  
-  .full-collapse {
-    cursor: pointer;
-  }
+/* Sidebar styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100%;
+  background: #F0F0F0; /* Background color */
+  z-index: 2000;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  color: #000; /* Text color */
+  text-decoration: none;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Brand styles */
+.brand {
+  padding-top: 2px;
+  color: #FF515F; /* Brand text color */
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 700;
+  font-family: 'Beaufort for LOL';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* Styles for the logo and ransomizer */
+.brand .sidebar-text {
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.brand #ransomizer {
+  font-size: 1.5rem;
+  line-height: normal;
+  word-spacing: 0.5em;
+}
+
+/* Styles for menu items */
+.side-menu {
+  width: 100%;
+  margin-top: 5px;
+  list-style: none;
+  flex-grow: 1;
+}
+
+.side-menu li {
+  height: 48px;
+  background: transparent;
+  margin-left: -35px;
+  border-radius: 48px 0 0 48px;
+  padding: 4px;
+}
+
+.side-menu li.active {
+  position: relative;
+}
+
+.side-menu li.active::before {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  top: -40px;
+  right: 0;
+  z-index: -1;
+}
+
+.side-menu li.active::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  bottom: -40px;
+  right: 0;
+  z-index: -1;
+}
+
+.side-menu li a {
+  text-decoration: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border-radius: 48px;
+  color: #000000;
+  padding-left: 20px;
+}
+
+.side-menu.top li a:hover span {
+  color: #FF515F; /* Text color on hover */
+}
+
+.side-menu.top li.active a span {
+  color: #FF515F; /* Active menu item text color */
+}
+
+.side-menu.top.hide li.active a span {
+  color: #FF515F; /* Active menu item text color */
+  width: calc(48px - (4px * 2));
+}
+
+.side-menu li a.logout-link:hover {
+  color: #FF515F; /* Logout link text color on hover */
+}
+
+.home-icon,
+.logout-icon {
+  min-width: calc(60px - ((4px + 6px) * 2));
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+  color: #E7FCA8; /* Home and Logout icon color */
+}
+
+.collapse-icon {
+  margin-left: 11px;
+}
+
+.collapse-text {
+  margin-left: 11px;
+}
+ 
+.full-collapse {
+  cursor: pointer;
+}
+
+.category-icon {
+  width: 24px; 
+  height: 24px; 
+  margin-right: 8px; 
+  color: #000; 
+}
+
+.logout-icon {
+  width: 12px; 
+  height: 24px; 
+}

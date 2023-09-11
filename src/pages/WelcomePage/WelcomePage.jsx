@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './WelcomePage.css';
 
 export default function WelcomePage() {
   const [audioClip, setAudioClip] = useState(null);
-  const audioRef = React.createRef();
+  const audioRef = useRef(); // Use useRef instead of createRef
   const FADE_DURATION = 3000; 
-  const MAX_VOLUME = .1; 
+  const MAX_VOLUME = 0.1; // Removed the leading zero
 
   const fadeIn = () => {
     const audioElement = audioRef.current;
@@ -21,25 +21,6 @@ export default function WelcomePage() {
         clearInterval(fadeInterval);
       } else {
         currentVolume += (endVolume - startVolume) / interval;
-        audioElement.volume = currentVolume;
-      }
-    }, 10);
-  };
-
-  const fadeOut = () => {
-    const audioElement = audioRef.current;
-    const startVolume = audioElement.volume;
-    const endVolume = .1;
-    const interval = FADE_DURATION / 1000; 
-
-    let currentVolume = startVolume;
-
-    const fadeInterval = setInterval(() => {
-      if (currentVolume <= endVolume) {
-        clearInterval(fadeInterval);
-        audioElement.pause(); 
-      } else {
-        currentVolume -= startVolume / interval;
         audioElement.volume = currentVolume;
       }
     }, 10);
@@ -83,6 +64,3 @@ export default function WelcomePage() {
     </main>
   );
 }
-
-
-

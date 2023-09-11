@@ -10,7 +10,7 @@ body, html {
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(14, 30, 46);
+  background-color: #F0F0F0;
 }
 
 code {

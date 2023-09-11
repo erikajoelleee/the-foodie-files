@@ -5,7 +5,7 @@
   left: 0;
   width: 280px;
   height: 100%;
-  background: #F0F0F0; /* Background color */
+  background: #FFFFFF; /* Background color */
   z-index: 2000;
   overflow-y: hidden;
   overflow-x: hidden;
@@ -22,7 +22,6 @@
   text-decoration: none;
   font-size: 22px;
   font-weight: 700;
-  font-family: 'Beaufort for LOL';
   display: flex;
   align-items: center;
   justify-content: center;

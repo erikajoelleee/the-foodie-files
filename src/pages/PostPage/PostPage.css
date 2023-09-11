@@ -1,14 +1,14 @@
 .Loading-post-page { 
-    color: white;
+    color: #000000;
     font-size: 36px;
 }
 
 .post-on-postpage {
-    color: white;
+    color: #000000;
     margin-top: 6vmin;
     margin-right: 4vmin;
     margin-left: 4vmin;
-    background-color: rgb(32, 46, 81);
+    background-color: #FFFFFF;
     border-radius: 10px;
     display: flex;
     flex-direction: row;
@@ -201,7 +201,7 @@
   
 .delete-confirmation-dialog {
     margin-left: 280px;
-    background-color: rgb(32, 46, 81);
+    background-color: #FFFFFF;
     padding: 20px;
     border-radius: 4px;
 }
@@ -232,7 +232,7 @@
 .delete-cancel-button {
     font-size: 14px;
     background: transparent;
-    color: white;
+    color: #000000;
     border: transparent;
     font-weight: bold;
 }
@@ -254,9 +254,9 @@
 .edit-category-option,
 .edit-title-text,
 .edit-content-text {
-    color: white;
+    color: #000000;
     font-size: 14px;
-    border: 1px solid rgb(64, 93, 139);
+    border: 1px solid #FF515F;
     border-radius: 5px;
     background: transparent;
 

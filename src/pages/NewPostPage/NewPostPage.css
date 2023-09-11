@@ -1,14 +1,14 @@
 .new-post-page-header {
-    color: white;
+    color: #000000;
     display: flex;
     align-items: center;
     justify-content: flex-start;
 }
 
 .new-post-on-postpage {
-    color: white;
+    color: #000000;
     margin-top: 2vmin;
-    background-color: rgb(32, 46, 81);
+    background-color:#F5F5F5;
     border-radius: 10px;
     display: flex;
     flex-direction: row;

@@ -5,37 +5,27 @@
     transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
-    -webkit-box-align: center;
     align-items: center;
     width: 100%;
     padding: 0px 20px 40px;
-}
-
-.the-foodie-files-h1 {
-    color: rgb(232, 207, 16);
-    font-family: 'Beaufort for LOL';
-    font-weight: bold;
-    font-size: 36px;
-    letter-spacing: 0.15rem;
-    text-shadow: 5px 5px 4px rgba(59, 48, 21, 0.6);
-}
-
-.signup-rectangle {
+  }
+  
+  
+  .signup-rectangle {
     display: flex;
-    -webkit-box-align: center;
     align-items: center;
     width: 100%;
     max-width: 320px;
     flex: 1 1 320px;
-}
-
-.auth-page-container {
+  }
+  
+  .auth-page-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     gap: 15px;
-}
+  }
 
 .auth-page-form-column {
     display: flex;
@@ -71,16 +61,16 @@
     border-style: solid;
     border-image: initial;
     transition: all 200ms ease 0s;
-    background-color: rgb(27, 44, 66);
-    border-color: rgb(59, 99, 150);
-    color: rgb(255, 255, 255);
+    background-color: #FFFFFF;
+    border-color: #E7FCA8;
+    color: #000000;
     outline: none;
     width: 324px;
 }
 
 .auth-input-field:focus, .auth-input-field:hover {
-    border-color: rgb(232, 207, 16);
-    background-color: rgb(37, 54, 77);
+    border-color: #FF515F;
+    background-color: #E7FCA8;
 }
 
 .auth-input-field::placeholder {
@@ -118,8 +108,7 @@
 .auth-button {
     margin: 1vmin;
     padding: 1vmin;
-    color: rgb(0, 0, 0);
-    background-color: rgb(232, 207, 16);
+    background-color:#276694;
     font-size: 14px;
     font-weight: bold;
     text-decoration: none;
@@ -131,7 +120,7 @@
 
 .auth-button:disabled, form:invalid button[type="submit"] {
     cursor: not-allowed;
-    background-color: rgb(137, 106, 36);
+    background-color: #F5F5F5;
 }
 
 .auth-button[type="submit"] {

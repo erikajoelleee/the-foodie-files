@@ -91,11 +91,12 @@ const EditPostForm = ({ post, updatePost, handleCancel }) => {
                 <label className="edit-category">Category: </label>
               </div>
               <select name="category" className="edit-category-option" value={editedPost.category} onChange={handleChange}>
-                <option value="top">Top Lane</option>
-                <option value="jungle">Jungle</option>
-                <option value="mid">Mid Lane</option>
-                <option value="adc">ADC</option>
-                <option value="support">Support</option>
+                <option value="appetizer">Appetizer</option>
+                <option value="side">Side</option>
+                <option value="main">Main</option>
+                <option value="dessert">Dessert</option>
+                <option value="party-tray">Party Tray</option>
+                <option value="drink">Drink</option>
               </select>
               <button className="delete-post-button" title="Delete post" onClick={handleDelete}>
                 <BiTrash />

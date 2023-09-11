@@ -15,7 +15,7 @@ export default function NavBar({ user, setUser }) {
           <form>
             <input 
               type="search" 
-              placeholder="Search LegendsLounge" 
+              placeholder="Search The Foodie Files" 
               className="nav-search-input" 
               onChange={(evt) => setIsTyping(evt.target.value.trim() !== '')}
             />

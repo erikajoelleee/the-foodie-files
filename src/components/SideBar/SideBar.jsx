@@ -7,6 +7,7 @@ import sideIcon from "../../stylesheets/salad_2515150.png";
 import mainIcon from "../../stylesheets/dish.png";
 import dessertIcon from "../../stylesheets/dessert_4421199.png";
 import partyTrayIcon from "../../stylesheets/appetizer.png";
+import drinkIcon from "../../stylesheets/drink.png";
 import homeIcon from "../../stylesheets/ufo.png"; 
 import logoutIcon from "../../stylesheets/Screenshot_2023-09-11_at_3.30.25_PM-removebg-preview.png"; 
 
@@ -35,7 +36,7 @@ export default function SideBar({ user, setUser }) {
           src="https://i.imgur.com/1h1rFpZ.png"
           alt="The Foodie Files"
           className="sidebar-logo"
-          style={{ width: "30vh", height: "auto" }}
+          style={{ width: "300px", height: "auto" }}
         />
       </Link>
       <ul className="side-menu top">
@@ -45,7 +46,7 @@ export default function SideBar({ user, setUser }) {
             className="sidebar-home"
             onClick={() => handleSidebarClick("home")}
           >
-            <img src={homeIcon} alt="Home Icon" className="category-icon" /> {/* Use your custom home icon */}
+            <img src={homeIcon} alt="Home Icon" className="category-icon" /> 
             <span className="sidebar-text">Home</span>
           </Link>
         </li>
@@ -112,11 +113,25 @@ export default function SideBar({ user, setUser }) {
             <span className="sidebar-text">Party Tray</span>
           </Link>
         </li>
-        </ul>
+        <li className={getSidebarClassName("drink")}>
+          <Link
+            to="/posts/category/drink"
+            className="sidebar-drink"
+            onClick={() => handleSidebarClick("drink")}
+          >
+            <img
+              src={drinkIcon}
+              alt="Drink Icon"
+              className="category-icon"
+            />
+            <span className="sidebar-text">Drink</span>
+          </Link>
+        </li>
+      </ul>
       <ul className="side-menu">
         <li>
           <Link to="" onClick={handleLogOut} className="logout-link">
-            <img src={logoutIcon} alt="Logout Icon" className="logout-icon" /> {/* Use your custom logout icon */}
+            <img src={logoutIcon} alt="Logout Icon" className="logout-icon" /> 
             <span className="sidebar-text">Log out</span>
           </Link>
         </li>

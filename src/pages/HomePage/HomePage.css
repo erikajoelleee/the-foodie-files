@@ -1,8 +1,12 @@
 .home-page-header {
-    color: white;
+    color: #000000;
     justify-content: center;
     align-items: center;
     display: flex;
+}
+
+.sub-header h3 {
+    text-align: center;
 }
 
 .post-on-postpage {

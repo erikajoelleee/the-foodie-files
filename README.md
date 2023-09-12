@@ -34,8 +34,8 @@ Join us at The Foodie Files, where food meets the final frontier. Whether you're
 
 # Getting Started
 
-[Trello Board](https://trello.com/b/Wm7jJ5b6/project-4-the-foodie-files)
-[The Foodie Files](https://the-foodie-files-e414532abfbc.herokuapp.com/)
+- [Trello Board](https://trello.com/b/Wm7jJ5b6/project-4-the-foodie-files)
+- [The Foodie Files](https://the-foodie-files-e414532abfbc.herokuapp.com/)
 
 # Next Steps
 

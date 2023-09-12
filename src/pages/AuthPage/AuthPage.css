@@ -182,7 +182,6 @@
     right: 0px;
     bottom: 0px;
     height: 1px;
-    background: rgb(18, 30, 45);
 }
 
 .tab-login.active::after,

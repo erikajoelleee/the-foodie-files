@@ -95,7 +95,7 @@
 }
 
 .side-menu.top li a:hover span {
-  color: #FF515F; /* Text color on hover */
+  color: rgb(228, 208, 71); /* Text color on hover */
 }
 
 .side-menu.top li.active a span {

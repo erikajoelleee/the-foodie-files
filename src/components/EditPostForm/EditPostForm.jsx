@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-// import { useHistory } from 'react-router';
 import { BiTrash } from 'react-icons/bi';
 import * as postsAPI from '../../utilities/posts-api';
 import { useNavigate } from 'react-router-dom';
@@ -16,7 +15,6 @@ const EditPostForm = ({ post, updatePost, handleCancel }) => {
   
   const titleRef = useRef(null);
   const contentRef = useRef(null);
-//   const history = useHistory();
 
   const adjustElementSize = (ref) => {
     const element = ref.current;
@@ -84,65 +82,65 @@ const EditPostForm = ({ post, updatePost, handleCancel }) => {
     );
   } else {
     return (
-        <div className="edit-post-form-container">
-          <form className="edit-post-form" onSubmit={handleSubmit}>
-            <div className="edit-category-div">
-              <div className="edit-field-category">
-                <label className="edit-category">Category: </label>
-              </div>
-              <select name="category" className="edit-category-option" value={editedPost.category} onChange={handleChange}>
-                <option value="appetizer">Appetizer</option>
-                <option value="side">Side</option>
-                <option value="main">Main</option>
-                <option value="dessert">Dessert</option>
-                <option value="party-tray">Party Tray</option>
-                <option value="drink">Drink</option>
-              </select>
-              <button className="delete-post-button" title="Delete post" onClick={handleDelete}>
-                <BiTrash />
-              </button>
+      <div className="edit-post-form-container">
+        <form className="edit-post-form" onSubmit={handleSubmit}>
+          <div className="edit-category-div">
+            <div className="edit-field-category">
+              <label className="edit-category">Category: </label>
             </div>
-      
-            <div className="edit-title-div">
-              <div className="edit-field-title">
-                <label className="edit-title">Title: </label>
-              </div>
-              <input 
-                ref={titleRef}
-                style={{ height: 'auto' }} // As per your usage in the code
-                type="text" 
-                className="edit-title-text" 
-                name="title" 
-                value={editedPost.title} 
-                onChange={handleChange} 
-              />
+            <select name="category" className="edit-category-option" value={editedPost.category} onChange={handleChange}>
+              <option value="appetizer">Appetizer</option>
+              <option value="side">Side</option>
+              <option value="main">Main</option>
+              <option value="dessert">Dessert</option>
+              <option value="party-tray">Party Tray</option>
+              <option value="drink">Drink</option>
+            </select>
+            <button className="delete-post-button" title="Delete post" onClick={handleDelete}>
+              <BiTrash />
+            </button>
+          </div>
+    
+          <div className="edit-title-div">
+            <div className="edit-field-title">
+              <label className="edit-title">Title: </label>
             </div>
-      
-            <div className="edit-content-div">
-              <div className="edit-field-content">
-                <label className="edit-content">Content: </label>
-              </div>
-              <textarea 
-                ref={contentRef}
-                style={{ height: 'auto' }} // As per your usage in the code
-                className="edit-content-text" 
-                name="content" 
-                value={editedPost.content} 
-                onChange={handleChange} 
-              />
+            <input 
+              ref={titleRef}
+              style={{ height: 'auto' }}
+              type="text" 
+              className="edit-title-text" 
+              name="title" 
+              value={editedPost.title} 
+              onChange={handleChange} 
+            />
+          </div>
+    
+          <div className="edit-content-div">
+            <div className="edit-field-content">
+              <label className="edit-content">Content: </label>
             </div>
-      
-            <div className="save-button-edit">
-              <button type="submit" className="save-changes-button">
-                Save Changes
-              </button>
-              <button type="button" className="cancel-button" onClick={handleCancel}>
-                Cancel
-              </button>
-            </div>
-          </form>
-        </div>
-      );
+            <textarea 
+              ref={contentRef}
+              style={{ height: 'auto' }}
+              className="edit-content-text" 
+              name="content" 
+              value={editedPost.content} 
+              onChange={handleChange} 
+            />
+          </div>
+    
+          <div className="save-button-edit">
+            <button type="submit" className="save-changes-button">
+              Save Changes
+            </button>
+            <button type="button" className="cancel-button" onClick={handleCancel}>
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    );
   }
 }
 

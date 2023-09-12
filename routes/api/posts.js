@@ -20,6 +20,7 @@ router.get('/:postId', ensureLoggedIn, postsCtrl.getPostById);
 // PUT /api/posts/:postId
 router.put('/:postId', ensureLoggedIn, postsCtrl.updatePost);
 
+// DELETE /api/posts/:postId
 router.delete('/:postId', ensureLoggedIn, postsCtrl.deletePost);
 
 module.exports = router;

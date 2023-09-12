@@ -11,7 +11,7 @@ Join us at The Foodie Files, where food meets the final frontier. Whether you're
 
 # Screenshot
 
-<img src="https://i.imgur.com/JCbE06u.mp4">
+![Welcome Screen](https://i.imgur.com/JCbE06u.mp4")
 <img src="https://i.imgur.com/EAiLKUd.png">
 <img src="https://i.imgur.com/NYdyqKf.png">
 <img src="https://i.imgur.com/f1MuYKV.png">

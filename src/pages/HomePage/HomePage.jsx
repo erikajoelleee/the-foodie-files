@@ -16,6 +16,7 @@ export default function HomePage() {
                 if (location.pathname === '/home') {
                     const fetchedPosts = await postsAPI.fetchPosts();
                     const sortedPosts = fetchedPosts.sort((a, b) => b.createdAt - a.createdAt);
+                    console.log(sortedPosts)
                     setPosts(sortedPosts);
                 }
             } catch (error) {
@@ -64,6 +65,7 @@ export default function HomePage() {
                     <Link to={`/posts/${post._id}`} key={post._id} className="post-link">
                         <div className="post-page">
                             <div className="post-on-postpage">
+                                <span>{ post.likes }</span>
                                 <div className="postpage-buttons">
                                     <div className="vertical-buttons">
                                         <button onClick={handleLike} className={`like-button ${likeClicked ? 'liked' : ''}`} title="Like">
@@ -72,6 +74,7 @@ export default function HomePage() {
                                         <button onClick={handleDislike} className={`dislike-button ${dislikeClicked ? 'disliked' : ''}`} title="Dislike">
                                             {dislikeClicked ? <PiArrowFatDownBold className="disliked-icon" /> : <PiArrowFatDownBold />}
                                         </button>
+                            
                                     </div>
                                 </div>
                                 <div className="post-page-rest-of-post">

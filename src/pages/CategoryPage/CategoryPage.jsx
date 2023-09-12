@@ -7,8 +7,6 @@ import * as postsAPI from '../../utilities/posts-api';
 export default function CategoryPage() {
   const [posts, setPosts] = useState([]);
   const { category } = useParams();
-  const [likeClicked, setLikeClicked] = useState(false);
-  const [dislikeClicked, setDislikeClicked] = useState(false);
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -24,14 +22,46 @@ export default function CategoryPage() {
     fetchPosts();
   }, [category]);
 
-  const handleLike = () => {
-    setLikeClicked(!likeClicked);
-    setDislikeClicked(false);
+  const handleLike = async (postId) => {
+    try {
+      const response = await fetch(`/api/posts/${postId}/upvote`, {
+        method: 'POST',
+      });
+
+      if (response.ok) {
+        // Update the likes count in the state
+        setPosts((prevPosts) =>
+          prevPosts.map((post) =>
+            post._id === postId ? { ...post, likes: post.likes + 1 } : post
+          )
+        );
+      } else {
+        console.error('Failed to upvote');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
 
-  const handleDislike = () => {
-    setDislikeClicked(!dislikeClicked);
-    setLikeClicked(false);
+  const handleDislike = async (postId) => {
+    try {
+      const response = await fetch(`/api/posts/${postId}/downvote`, {
+        method: 'POST',
+      });
+
+      if (response.ok) {
+        // Update the dislikes count in the state
+        setPosts((prevPosts) =>
+          prevPosts.map((post) =>
+            post._id === postId ? { ...post, dislikes: post.dislikes + 1 } : post
+          )
+        );
+      } else {
+        console.error('Failed to downvote');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
 
   return (
@@ -66,12 +96,14 @@ export default function CategoryPage() {
                 <div className="post-on-postpage">
                   <div className="postpage-buttons">
                     <div className="vertical-buttons">
-                      <button onClick={handleLike} className={`like-button ${likeClicked ? 'liked' : ''}`} title="Like">
-                        {likeClicked ? <PiArrowFatUpBold className="liked-icon" /> : <PiArrowFatUpBold />}
+                      <button onClick={() => handleLike(post._id)} className="like-button">
+                        <PiArrowFatUpBold className="liked-icon" />
                       </button>
-                      <button onClick={handleDislike} className={`dislike-button ${dislikeClicked ? 'disliked' : ''}`} title="Dislike">
-                        {dislikeClicked ? <PiArrowFatDownBold className="disliked-icon" /> : <PiArrowFatDownBold />}
+                      <span className="like-count">{post.likes}</span>
+                      <button onClick={() => handleDislike(post._id)} className="dislike-button">
+                        <PiArrowFatDownBold className="disliked-icon" />
                       </button>
+                      <span className="dislike-count">{post.dislikes}</span>
                     </div>
                   </div>
                   <div className="post-page-rest-of-post">

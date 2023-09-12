@@ -7,12 +7,12 @@
   height: 100%;
   background: #FFFFFF; /* Background color */
   z-index: 2000;
-  color: #000; /* Text color */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   overflow-y: hidden;
   overflow-x: hidden;
+  color: #000; /* Text color */
+  text-decoration: none;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /* Brand styles */
@@ -28,6 +28,20 @@
   flex-direction: column;
 }
 
+/* Styles for the logo and ransomizer */
+.brand .sidebar-text {
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.brand #ransomizer {
+  font-size: 1.5rem;
+  line-height: normal;
+  word-spacing: 0.5em;
+}
+
 /* Styles for menu items */
 .side-menu {
   width: 100%;
@@ -39,32 +53,35 @@
 .side-menu li {
   height: 48px;
   background: transparent;
+  margin-left: -35px;
   border-radius: 48px 0 0 48px;
   padding: 4px;
-  margin-left: -35px;
 }
 
 .side-menu li.active {
   position: relative;
 }
 
-.side-menu li.active::before,
+.side-menu li.active::before {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  top: -40px;
+  right: 0;
+  z-index: -1;
+}
+
 .side-menu li.active::after {
   content: '';
   position: absolute;
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  bottom: -40px;
   right: 0;
   z-index: -1;
-}
-
-.side-menu li.active::before {
-  top: -40px;
-}
-
-.side-menu li.active::after {
-  bottom: -40px;
 }
 
 .side-menu li a {
@@ -77,14 +94,23 @@
   padding-left: 20px;
 }
 
-/* Hover and active styles for top menu items */
-.side-menu.top li a:hover span,
-.side-menu.top li.active a span,
-.side-menu.top.hide li.active a span {
+.side-menu.top li a:hover span {
   color: rgb(228, 208, 71); /* Text color on hover */
 }
 
-/* Home and Logout icon styles */
+.side-menu.top li.active a span {
+  color: #FF515F; /* Active menu item text color */
+}
+
+.side-menu.top.hide li.active a span {
+  color: #FF515F; /* Active menu item text color */
+  width: calc(48px - (4px * 2));
+}
+
+.side-menu li a.logout-link:hover {
+  color: #FF515F; /* Logout link text color on hover */
+}
+
 .home-icon,
 .logout-icon {
   min-width: calc(60px - ((4px + 6px) * 2));
@@ -94,26 +120,26 @@
   color: #E7FCA8; /* Home and Logout icon color */
 }
 
-/* Collapse icon and text styles */
-.collapse-icon,
-.collapse-text {
+.collapse-icon {
   margin-left: 11px;
 }
 
+.collapse-text {
+  margin-left: 11px;
+}
+ 
 .full-collapse {
   cursor: pointer;
 }
 
-/* Category icon styles */
 .category-icon {
-  width: 24px;
-  height: 24px;
-  margin-right: 8px;
-  color: #000;
+  width: 24px; 
+  height: 24px; 
+  margin-right: 8px; 
+  color: #000; 
 }
 
-/* Logout icon size */
 .logout-icon {
-  width: 12px;
-  height: 24px;
+  width: 12px; 
+  height: 24px; 
 }

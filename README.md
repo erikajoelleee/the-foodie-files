@@ -2,7 +2,7 @@
 
 By Erika Roncal Project 4 SEI-620
 
-At the end of my General Assembly Journey, I wanted to encapsulate my knowledge from all my past projects and merge them into one super project as my capstone. I present to you, The Foodie Files.
+At the end of my General Assembly Journey, I wanted to encapsulate my software engineering knowledge from all my past projects and merge them into one super project as my capstone. I present to you, The Foodie Files.
 # Description
 Welcome to The Foodie Files, your intergalactic portal for sharing and discovering out-of-this-world recipes, culinary concoctions, and mysterious far-out adventures!Are you ready to embark on a gastronomical journey like no other? The Foodie Files is not your average food blog platform. It's a universe where food enthusiasts come together to share their culinary discoveries, complete with a cosmic twist! 🌟🍽️
 

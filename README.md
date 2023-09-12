@@ -11,7 +11,7 @@ Join us at The Foodie Files, where food meets the final frontier. Whether you're
 **Key Features:**
 
 - User Authentication: Secure user registration and login system to create and manage individual accounts.
-- Create and Share: Users can easily create and publish their food blog posts, complete with images, detailed recipes, and personal anecdotes.
+- Create and Share: Users can easily create and publish their food blog posts, complete with detailed recipes and personal anecdotes.
 - Browse and Discover: Explore a diverse collection of food blog posts by category, whether you're looking for inspiration for your next meal or a new culinary adventure.
 
 # Screenshot

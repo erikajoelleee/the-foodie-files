@@ -29,6 +29,10 @@ Join us at The Foodie Files, where food meets the final frontier. Whether you're
 - **JavaScript**: Used for client-side scripting and interactivity.
 - **HTML**: The markup language used to structure the content of web pages.
 - **CSS**: Used for styling and design to enhance the user interface.
+- **Mongoose/MongoDB**: A powerful, scalable, and flexible NoSQL database used for data storage.
+- **Express**: A web application framework for Node.js used for building server-side applications and APIs.
+- **React**: A JavaScript library for building user interfaces, particularly single-page applications.
+- **Node.js**: A JavaScript runtime environment used for server-side scripting and building scalable network applications.
 - **GitHub**: Version control platform for collaboration and code management.
 - **Heroku**: Cloud platform for deploying, managing, and scaling applications.
 
